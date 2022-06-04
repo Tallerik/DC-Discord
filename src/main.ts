@@ -3,7 +3,7 @@ import {Client} from "discordx";
 import { Intents } from "discord.js";
 import {importx, dirname} from "@discordx/importer";
 import {init as mysql_init, execute as query} from "./mysql.js";
-
+import {config} from "./config.js";
 
 export class Main {
     private static _client: Client;
@@ -53,10 +53,10 @@ export class Main {
         await importx(dirname(import.meta.url) + "/commands/**/*.{js,ts}");
 
         // let's start the bot
-        if (!process.env.BOT_TOKEN) {
+        if (!config.bot.token) {
             throw Error("Could not find BOT_TOKEN in your environment");
         }
-        await this._client.login(process.env.BOT_TOKEN);
+        await this._client.login(config.bot.token);
 
     }
 

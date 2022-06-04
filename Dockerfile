@@ -31,6 +31,6 @@ RUN npm install --only=production
 
 # Move build files
 COPY --from=build-runner /tmp/app/dist /app/build
-COPY production-config.json /app/build/config.json
+
 # Start bot
 CMD [ "node", "build/main.js" ]

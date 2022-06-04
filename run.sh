@@ -1,0 +1,1 @@
+docker run --name jsdiscord --network=host -d --env-file=.env --restart=always tallerik/jsdiscord:latest

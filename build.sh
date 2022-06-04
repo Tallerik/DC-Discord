@@ -1,0 +1,1 @@
+docker build -t "tallerik/jsdiscord:latest" .

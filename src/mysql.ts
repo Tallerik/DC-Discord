@@ -1,6 +1,5 @@
 import { createPool, Pool} from 'mysql';
-// @ts-ignore
-import dataSource from './config.json' assert {type: "json"};
+import {config} from "./config.js";
 
 let pool: Pool;
 
@@ -9,13 +8,7 @@ let pool: Pool;
  */
 export const init = () => {
     try {
-        pool = createPool({
-            connectionLimit: dataSource.DB_CONNECTION_LIMIT,
-            host: dataSource.DB_HOST,
-            user: dataSource.DB_USER,
-            password: dataSource.DB_PASSWORD,
-            database: dataSource.DB_DATABASE,
-        });
+        pool = createPool(config.db);
 
         console.debug('MySql Adapter Pool generated successfully');
     } catch (error) {
