@@ -1,0 +1,30 @@
+{
+  "name": "dreamdiscord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node --experimental-json-modules dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "dream-city"
+  ],
+  "author": "Tallerik",
+  "devDependencies": {
+    "@types/node": "^17.0.39",
+    "ts-node": "^10.8.1",
+    "tslint": "^5.12.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "@discordx/importer": "^1.1.9",
+    "@types/mysql": "^2.15.21",
+    "discord.js": "^13.7.0",
+    "discordx": "^9.7.1",
+    "mysql": "^2.18.1"
+  }
+}
